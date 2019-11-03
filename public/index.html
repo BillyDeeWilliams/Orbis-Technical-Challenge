@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+    <!--<link rel="stylesheet" href="./src/styles/styles.css" />-->
+
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="Orbis Systems, Inc Technical challenge StockTwits Stock Watcher"
+      content="Web site created using create-react-app, Orbis Systems, Inc Technical challenge StockTwits Stock Watcher."
+    />
+    <link rel="apple-touch-icon" href="logo192.png" />
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <title>StockTwits Stock Watcher</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+  <script>
+    (function (clientId) {
+      var accessTokenIndex = window.location.hash.indexOf('access_token='),
+          accessToken      = ~accessTokenIndex && window.location.hash.substr(accessTokenIndex + 13);
+      if (accessToken) {
+        window.opener.accessToken(accessToken);
+        window.close();
+      } else {
+        // Redirect to StockTwits for authentication
+        window.location = 'https://api.stocktwits.com/api/2/oauth/authorize?client_id=' + clientId + '&response_type=token&redirect_uri=' + window.location.href + '&scope=read,watch_lists,publish_messages,publish_watch_lists,follow_users,follow_stocks';
+      }
+    })('299c6bda26e33ee1');
+  </script>
+
+    <div id="root"></div>
+
+  </body>
+</html>
+<style>
+.center-flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+</style>
