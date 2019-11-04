@@ -13,13 +13,15 @@ class App extends React.Component {
             images: [],
             imageURLS: [],
             currRequestStatus: {},
+            symbols: {},
+            messages: []
     }
     onSearchSUbmit = async (sq) => {
-        const response = await Unsplash.get( '/search/photos' , {
-                params: { query: sq }
+            const response = await StockTwit.get( '/symbols.json' , {
+                params: { symbols: sq }
             });
 
-        this.setState({images: response.data.results});
+        this.setState({messages: response.data.results});
         //console.log(this.state.images)
     }
 
@@ -28,8 +30,7 @@ class App extends React.Component {
         return(
             <div className="ui continer" style={{marginTop:`10px`}}>
                 <SearchBar onSubmit={this.onSearchSUbmit} />
-                <Imagelist images={this.state.images} selectImage={this.selectImage}   />
-
+            //    <Messagelist messages={this.state.messages}   />
             </div>
         );
     }
