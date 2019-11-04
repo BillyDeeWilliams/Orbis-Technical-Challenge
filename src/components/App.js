@@ -3,6 +3,7 @@ import Unsplash from '../api/Unsplash.js';
 import StockTwit from '../api/Stocktwit.js';
 import SearchBar from './Searchbar.js';
 import Imagelist from './Imagelist.js';
+import Messagelist from './Messagelist.js';
 
 import '../styles/styles.css';
 
@@ -30,7 +31,7 @@ class App extends React.Component {
         return(
             <div className="ui continer" style={{marginTop:`10px`}}>
                 <SearchBar onSubmit={this.onSearchSUbmit} />
-            
+
             </div>
         );
     }
