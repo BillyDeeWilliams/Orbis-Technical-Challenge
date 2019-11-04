@@ -18,10 +18,7 @@ class SearchParamsList extends React.Component  {
   };
 
 
-    console.log("search param props: " + state.symbols)
-    let removeSymbol = () => {
 
-    }
     render(){
        return (
            <div className="ui segment">
