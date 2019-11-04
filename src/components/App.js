@@ -30,7 +30,7 @@ class App extends React.Component {
         return(
             <div className="ui continer" style={{marginTop:`10px`}}>
                 <SearchBar onSubmit={this.onSearchSUbmit} />
-            //    <Messagelist messages={this.state.messages}   />
+            
             </div>
         );
     }
