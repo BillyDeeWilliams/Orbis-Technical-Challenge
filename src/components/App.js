@@ -15,8 +15,12 @@ class App extends React.Component {
             messages: []
     }
     onSearchSUbmit = async (sq) => {
+        var accessTokenIndex = window.location.hash.indexOf('access_token='),
+            accessToken      = ~accessTokenIndex && window.location.hash.substr(accessTokenIndex + 13);
             const response = await StockTwit.get( '/symbols.json' , {
-                params: { symbols: sq }
+                params: {
+                    access_token: accessToken,
+                     symbols: sq }
             });
 
         this.setState({messages: response.data.results, symbols: sq });
