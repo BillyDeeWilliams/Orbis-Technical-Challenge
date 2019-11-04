@@ -15,6 +15,17 @@ ul{
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+.symbolList{
+list-style: none;
+display: flex;
+flex-direction: row;
+justify-content: space-space-between;
+}
+
+.symbolList li{
+max-width: 12%;
+}
+
 input{
         border: black solid;
 }
