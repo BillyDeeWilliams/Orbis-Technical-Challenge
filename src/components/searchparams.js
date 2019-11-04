@@ -1,20 +1,39 @@
 import React from 'react';
 
-const SearchParamsList= (props) => {
-
-console.log("search param props: " + props.symbols)
+class SearchParamsList extends React.Component  {
 
 
+    state = {
+        symbols : this.props.symbols,
+    };
+
+
+  onRemoveSymbol = i => {
+    this.setState(state => {
+      const symbols = state.symbols.filter((item, j) => i !== j);
+      return {
+        symbols,
+      };
+    });
+  };
+
+
+    console.log("search param props: " + state.symbols)
+    let removeSymbol = () => {
+
+    }
+    render(){
        return (
            <div className="ui segment">
-               <ul className="ui symbolList">
-               { props.symbols.map(item => (
-                       <li key={item}>{item}</li>
-                     ))}
-           </ul>
+            <ul className="ui symbolList">
+                {this.state.list.map((symbol, index) => (
+                    <li key={symbol}>{symbol}<button type="button" onClick={() => this.onRemoveSymbol(index)}>X</button></li>
+                ))}
+            </ul>
          </div>
        )
-    };
+    }
+};
 
 
 export default SearchParamsList;
