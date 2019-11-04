@@ -16,7 +16,7 @@ onFormSubmit = (e) =>{
                 <div className="ui segment ">
                     <form className="ui form center-flex" onSubmit={this.onFormSubmit}>
                         <div className="field">
-                            <label>Image Search</label>
+                            <label>Stock Watcher Search</label>
                             <input
                                 type="text"
                                 value={this.state.sq}
