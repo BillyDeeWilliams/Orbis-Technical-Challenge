@@ -22,7 +22,7 @@ class App extends React.Component {
             });
 
         this.setState({messages: response.data.results});
-        //console.log(this.state.images)
+        console.log(this.state.messages);
     }
 
 
@@ -30,7 +30,7 @@ class App extends React.Component {
         return(
             <div className="ui continer" style={{marginTop:`10px`}}>
                 <SearchBar onSubmit={this.onSearchSUbmit} />
-
+                <Messagelist messages={this.state.messages} />
             </div>
         );
     }

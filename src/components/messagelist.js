@@ -3,10 +3,10 @@ import React from 'react';
 const Messagelist = (props) => {
 
 
-    /*    let messages = props.messages.map(({id, body}) => {
+      let renderedMessages = props.messages.map(({id, body}) => {
 
                 return <li key={id} ><div>{{body}}</div></li>
-            });*/
+            });
 
 
 
@@ -14,7 +14,7 @@ const Messagelist = (props) => {
             <div className="ui segment">
                 <h2>Found  Messages</h2>
                 <ul className="ui gallery">
-                
+                    {renderedMessages}
                 </ul>
             </div>
         )
