@@ -14,16 +14,16 @@ class App extends React.Component {
             symbols: [],
             messages: []
     }
-    onSearchSUbmit = async (sq) => {
+    onSearchSubmit = async (sq) => {
         var accessTokenIndex = window.location.hash.indexOf('access_token='),
             accessToken      = ~accessTokenIndex && window.location.hash.substr(accessTokenIndex + 13);
             const response = await StockTwit.get( '/symbols.json' , {
                 params: {
                     access_token: accessToken,
-                     symbols: sq }
+                    symbols: sq }
             });
 
-        this.setState({messages: response.data.results, symbols: sq });
+        this.setState({ symbols: sq });
         console.log(this.state.messages);
     }
 
@@ -31,7 +31,7 @@ class App extends React.Component {
     render(){
         return(
             <div className="ui continer" style={{marginTop:`10px`}}>
-                <SearchBar onSubmit={this.onSearchSUbmit} />
+                <SearchBar onSubmit={this.onSearchSubmit} />
                 <SearchParamsList symbols={this.state.symbols} />
                 <Messagelist messages={this.state.messages} />
             </div>
