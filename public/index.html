@@ -21,7 +21,7 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
   <script>
-    /*(function (clientId) {
+    (function (clientId) {
       var accessTokenIndex = window.location.hash.indexOf('access_token='),
           accessToken      = ~accessTokenIndex && window.location.hash.substr(accessTokenIndex + 13);
       if (accessToken) {
@@ -31,7 +31,7 @@
         // Redirect to StockTwits for authentication
         window.location = 'https://api.stocktwits.com/api/2/oauth/authorize?client_id=' + clientId + '&response_type=token&redirect_uri=' + window.location.href + '&scope=read,watch_lists,publish_messages,publish_watch_lists,follow_users,follow_stocks';
       }
-  })('889c81c9e99cb4c5');*/
+    })('889c81c9e99cb4c5');
   </script>
 
     <div id="root"></div>

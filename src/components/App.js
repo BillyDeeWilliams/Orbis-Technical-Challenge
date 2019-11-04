@@ -2,7 +2,7 @@ import React from 'react';
 import Unsplash from '../api/Unsplash.js';
 import StockTwit from '../api/Stocktwit.js';
 import SearchBar from './Searchbar.js';
-import Messagelist from './Messagelist.js';
+import Messagelist from './messagelist.js';
 import SearchParamsList from './searchparams.js';
 
 import '../styles/styles.css';
