@@ -2,7 +2,7 @@ import React from 'react';
 import Unsplash from '../api/Unsplash.js';
 import StockTwit from '../api/Stocktwit.js';
 import SearchBar from './Searchbar.js';
-import Messagelist from './messagelist.js';
+import Messagelist from './Messagelist.js';
 import SearchParamsList from './searchparams.js';
 
 import '../styles/styles.css';
@@ -24,7 +24,10 @@ class App extends React.Component {
                     symbols: sq }
             });
 */
-        this.setState({ symbols: sq });
+        console.log(sq)
+        this.setState(state => {
+        return  state.symbols.push(sq);
+          });
         console.log(this.state.symbols);
     }
 
