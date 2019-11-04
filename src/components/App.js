@@ -1,7 +1,8 @@
 import React from 'react';
+import Unsplash from '../api/Unsplash.js';
 import StockTwit from '../api/Stocktwit.js';
 import SearchBar from './Searchbar.js';
-import Messagelist from './Messagelist.js';
+import Imagelist from './Imagelist.js';
 
 import '../styles/styles.css';
 
@@ -12,15 +13,13 @@ class App extends React.Component {
             images: [],
             imageURLS: [],
             currRequestStatus: {},
-            symbols: {},
-            messages: []
     }
     onSearchSUbmit = async (sq) => {
-            const response = await StockTwit.get( '/symbols.json' , {
-                params: { symbols: sq }
+        const response = await Unsplash.get( '/search/photos' , {
+                params: { query: sq }
             });
 
-        this.setState({messages: response.data.results});
+        this.setState({images: response.data.results});
         //console.log(this.state.images)
     }
 
@@ -29,7 +28,8 @@ class App extends React.Component {
         return(
             <div className="ui continer" style={{marginTop:`10px`}}>
                 <SearchBar onSubmit={this.onSearchSUbmit} />
-                <Messagelist messages={this.state.messages} />
+                <Imagelist images={this.state.images} selectImage={this.selectImage}   />
+
             </div>
         );
     }
