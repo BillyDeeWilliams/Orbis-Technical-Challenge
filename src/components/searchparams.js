@@ -3,9 +3,9 @@ import React from 'react';
 const SearchParamsList= (props) => {
 
 
-      let symbolsList = props.symbols.map(({id, }) => {
+      let symbolsList = props.symbols.map((id,symbol) => {
 
-                return <li key={id} ><div>{{body}}</div></li>
+                return <li key={id} >{symbol}</li>
             });
 
 
