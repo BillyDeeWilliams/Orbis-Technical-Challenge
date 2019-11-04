@@ -3,7 +3,7 @@ import Unsplash from '../api/Unsplash.js';
 import StockTwit from '../api/Stocktwit.js';
 import SearchBar from './Searchbar.js';
 import Imagelist from './Imagelist.js';
-import Messagelist from './Messagelist.js';
+import Messagelist from './messagelist.js';
 
 import '../styles/styles.css';
 
