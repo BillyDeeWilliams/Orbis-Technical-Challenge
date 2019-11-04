@@ -1,7 +1,7 @@
 import React from 'react';
 import StockTwit from '../api/Stocktwit.js';
 import SearchBar from './Searchbar.js';
-import Imagelist from './Messagelist.js';
+import Messagelist from './Messagelist.js';
 
 import '../styles/styles.css';
 
