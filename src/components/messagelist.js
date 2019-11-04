@@ -3,9 +3,9 @@ import React from 'react';
 const Messagelist = (props) => {
 
 
-        let messages = props.publish_messages.map(({id, description, urls}) => {
+        let messages = props.messages.map(({id, body}) => {
 
-                return <li key={id} ><div style={ilStyles} ></div></li>
+                return <li key={id} ><div>{{body}}</div></li>
             });
 
 
