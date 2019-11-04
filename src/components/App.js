@@ -1,5 +1,6 @@
 import React from 'react';
 import Unsplash from '../api/Unsplash.js';
+import StockTwit from '../api/Stocktwit.js';
 import SearchBar from './Searchbar.js';
 import Imagelist from './Imagelist.js';
 
