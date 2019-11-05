@@ -19,7 +19,7 @@ class SearchParamsList extends React.Component  {
        return (
            <div className="ui segment">
             <ul className="ui symbolList">
-                {this.state.symbols.map((symbol, index) => (
+                {this.props.state.symbols.map((symbol, index) => (
                     <li key={index}>{symbol}<button type="button" onClick={() => this.removeSymbol(index)}>X</button></li>
                 ))}
             </ul>
