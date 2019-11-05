@@ -22,8 +22,9 @@ class App extends React.Component {
 
     updateMessages = (apiResponse)=>{
         this.setState(state => {
+            state.messages = [];
                for (var a = 0; a <= 4; a++){
-                state.messages.push( apiResponse.data.messages[a]);
+                state.messages.push(apiResponse.data.messages[a]);
               }
          });
      }
@@ -47,7 +48,7 @@ class App extends React.Component {
 
             this.updateSymbols(sq);
             console.log('app state symbol list:' + this.state.symbols);
-            console.log('app stat messgaes:' + this.state.messages);
+            console.log('app state messgaes:' + this.state.messages);
 
     }
 
