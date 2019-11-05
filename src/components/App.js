@@ -30,6 +30,7 @@ class App extends React.Component {
 
             } catch (err) {
                 console.log(err);
+                alert("invalid symbol \n Please ")
             };
 
         this.setState(state => {
@@ -51,7 +52,7 @@ class App extends React.Component {
         return(
             <div className="ui continer" style={{marginTop:`10px`}}>
                 <SearchBar onSubmit={this.onSearchSubmit} />
-                <SearchParamsList symbols={this.state.symbols}  />
+                <SearchParamsList symbols={this.state.symbols} removeSymbol={this.removeSymbol} />
                 <Messagelist messages={this.state.messages} />
             </div>
         );
