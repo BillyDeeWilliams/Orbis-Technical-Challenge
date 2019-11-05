@@ -12,7 +12,7 @@ const Messagelist = (props) => {
             <div className="ui segment">
                 <h2>Found  Messages</h2>
                 <ul className="ui gallery">
-                {renderedMessages}
+                {props.renderedMessages}
                 </ul>
             </div>
         )

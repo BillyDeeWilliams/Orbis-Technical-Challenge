@@ -23,8 +23,8 @@ class App extends React.Component {
     updateMessages = (apiResponse)=>{
         this.setState(state => {
             state.messages = [];
-               for (var a = 0; a <= 4; a++){
-                state.messages.push(apiResponse.data.messages[a]);
+               for (var m = 0; m <= 4; m++){
+                state.messages.push(apiResponse.data.messages[m]);
               }
          });
      }
