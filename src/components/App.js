@@ -23,11 +23,11 @@ class App extends React.Component {
     updateMessages = (apiResponse)=>{
         this.setState(state => {
             state.messages = [];
-               for (var m = 0; m <= 4; m++){
-                state.messages.push(apiResponse.data.messages[m]);
-              }
+            let messages = apiResponse.data.messages.filter((message,idx) => idx < 5)
+            state.messages = messages;
          });
      }
+     
     onSearchSubmit =  async(sq) => {
         var accessTokenIndex = window.location.hash.indexOf('access_token='),
             accessToken      = ~accessTokenIndex && window.location.hash.substr(accessTokenIndex + 13);
