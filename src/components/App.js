@@ -25,11 +25,13 @@ class App extends React.Component {
                     access_token: accessToken,
                     symbols: sq }
             });
+
+                    console.log(response)
+
             } catch (err) {
                 console.log(err);
             };
 
-        console.log(response)
         this.setState(state => {
         return  state.symbols.push(sq);
           });
