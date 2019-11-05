@@ -16,14 +16,14 @@ class App extends React.Component {
     }
 
     updateSymbols = (symbol) => {
-                state.symbols.push(symbol);
+                this.state.symbols.push(symbol);
 
     };
 
     updateMessages = (apiResponse)=>{
         this.setState(state => {
                for (var a = 0; a <= 4; a++){
-                state.messages.push( response.data.messages[a]);
+                state.messages.push( apiResponse.data.messages[a]);
               }
          });
      }
@@ -38,11 +38,12 @@ class App extends React.Component {
                     symbols: sq }
                 });
                 this.updateMessages(response);
+                console.log(response);
             } catch (err) {
                 console.log(err);
 
             };
-            console.log(response);
+
 
             this.updateSymbols(sq);
             console.log('app state symbol list:' + this.state.symbols);
