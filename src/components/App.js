@@ -17,12 +17,18 @@ class App extends React.Component {
 
     onSearchSubmit =  async(sq) => {
         var accessTokenIndex = window.location.hash.indexOf('access_token='),
-            accessToken      = ~accessTokenIndex && window.location.hash.substr(accessTokenIndex + 13);
-            const response = await StockTwit.get( '/symbols.json' , {
+            accessToken      = ~accessTokenIndex && window.location.hash.substr(accessTokenIndex + 13),
+            sq = sq.join();
+
+            try {
+                const response = await StockTwit.get( '/symbols.json' , {
                 params: {
                     access_token: accessToken,
                     symbols: sq }
             });
+            } catch (err) {
+                console.log(err);
+            };
 
         console.log(response)
         this.setState(state => {

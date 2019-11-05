@@ -2,14 +2,12 @@ import React from 'react';
 
 class SearchParamsList extends React.Component  {
 
-
-    state = {
-        symbols : this.props.symbols,
-    };
-
+    constructor(props) {
+        super(props);
+    }
 
   removeSymbol = (i) => {
-      let symbols = state.symbols.filter((item, j) => i !== j);
+      let symbols = this.props.state.symbols.filter((item, j) => i !== j);
       return {
         symbols,
       };
