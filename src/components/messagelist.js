@@ -8,13 +8,11 @@ const Messagelist = (props) => {
                 return <li key={id} ><div>{{body}}</div></li>
             });
 
-
-
         return (
             <div className="ui segment">
                 <h2>Found  Messages</h2>
                 <ul className="ui gallery">
-                    {renderedMessages}
+                {renderedMessages}
                 </ul>
             </div>
         )
