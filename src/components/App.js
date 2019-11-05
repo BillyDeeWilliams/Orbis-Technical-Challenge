@@ -38,7 +38,7 @@ class App extends React.Component {
           });
         console.log(this.state.symbols);
     }
-    removeSymbol = (symbols) =>{
+    removeSymbol = (i) =>{
         this.setState(state => {
           let symbols = state.symbols.filter((item, j) => i !== j);
           return {
