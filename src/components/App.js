@@ -24,7 +24,7 @@ class App extends React.Component {
         this.setState(state => {
             state.messages = [];
                for (var m = 0; m <= 4; m++){
-                state.messages.push(JSON.parse(apiResponse.data.messages[m]));
+                state.messages.push(apiResponse.messages[m]);
               }
          });
      }
@@ -39,7 +39,7 @@ class App extends React.Component {
                     symbols: sq }
                 });
 
-                this.updateMessages(response);
+                this.updateMessages(response.data);
                 console.log(response);
             } catch (err) {
                 console.log(err);
