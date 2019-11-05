@@ -10,8 +10,7 @@ class SearchParamsList extends React.Component  {
 
   removeSymbol = (i) => {
       let symbols = this.state.symbols.filter((item, j) => i !== j);
-      return {
-        symbols,
+      return  symbols
       };
     };
 
