@@ -23,11 +23,11 @@ class App extends React.Component {
     updateMessages = (apiResponse)=>{
         this.setState(state => {
             state.messages = [];
-            let messages = apiResponse.data.messages.filter((message,idx) => idx < 5)
-            state.messages = messages;
+               for (var m = 0; m <= 4; m++){
+                state.messages.push(JSON.parse(apiResponse.data.messages[m]));
+              }
          });
      }
-     
     onSearchSubmit =  async(sq) => {
         var accessTokenIndex = window.location.hash.indexOf('access_token='),
             accessToken      = ~accessTokenIndex && window.location.hash.substr(accessTokenIndex + 13);
@@ -38,6 +38,7 @@ class App extends React.Component {
                     access_token: accessToken,
                     symbols: sq }
                 });
+
                 this.updateMessages(response);
                 console.log(response);
             } catch (err) {
