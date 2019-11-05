@@ -40,8 +40,11 @@ class App extends React.Component {
     }
     removeSymbol = (symbols) =>{
         this.setState(state => {
-            return  state.symbols = symbols;
-          });
+          let symbols = state.symbols.filter((item, j) => i !== j);
+          return {
+            symbols,
+          };
+        });
 
     }
 
