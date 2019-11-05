@@ -30,7 +30,7 @@ class App extends React.Component {
                 this.setState(state => {
                       state.symbols.push(sq);
                       for (var a = 0; a <= 4;a++){
-                        state.messages.push( rsponse.data.messages[a]);
+                        state.messages.push( response.data.messages[a]);
                       }
                  });
                 console.log(this.state.symbols);
