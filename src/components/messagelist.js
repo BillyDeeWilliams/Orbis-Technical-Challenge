@@ -11,7 +11,9 @@ const Messagelist = (props) => {
         return (
             <div className="ui segment">
                 <h2>Found  Messages</h2>
+                    <h3>look in console</h3>
                 <ul className="ui gallery">
+
                 {props.renderedMessages}
                 </ul>
             </div>
