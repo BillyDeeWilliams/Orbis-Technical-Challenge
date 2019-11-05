@@ -26,20 +26,20 @@ class App extends React.Component {
                     symbols: sq }
             });
 
-                console.log(response);
-                this.setState(state => {
-                      state.symbols.push(sq);
-                      for (var a = 0; a <= 4;a++){
-                        state.messages.push( response.data.messages[a]);
-                      }
-                 });
-                console.log(this.state.symbols);
-                console.log(this.state.messages);
+
             } catch (err) {
                 console.log(err);
-                alert("invalid symbol \n Please ")
-            };
 
+            };
+            console.log(response);
+            this.setState(state => {
+                  state.symbols.push(sq);
+                  for (var a = 0; a <= 4; a++){
+                    state.messages.push( response.data.messages[a]);
+                  }
+             });
+            console.log(this.state.symbols);
+            console.log(this.state.messages);
 
     }
 
