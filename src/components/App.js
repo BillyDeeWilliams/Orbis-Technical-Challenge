@@ -30,7 +30,7 @@ class App extends React.Component {
           });
         console.log(this.state.symbols);
     }
-    onRemoveSymbol = (symbols) =>{
+    removeSymbol = (symbols) =>{
         this.setState(state => {
             return  state.symbols = symbols;
           });
@@ -42,7 +42,7 @@ class App extends React.Component {
         return(
             <div className="ui continer" style={{marginTop:`10px`}}>
                 <SearchBar onSubmit={this.onSearchSubmit} />
-                <SearchParamsList symbols={this.state.symbols} onClick />
+                <SearchParamsList symbols={this.state.symbols}  />
                 <Messagelist messages={this.state.messages} />
             </div>
         );
