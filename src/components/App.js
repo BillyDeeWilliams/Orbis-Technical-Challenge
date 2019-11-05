@@ -17,8 +17,7 @@ class App extends React.Component {
 
     onSearchSubmit =  async(sq) => {
         var accessTokenIndex = window.location.hash.indexOf('access_token='),
-            accessToken      = ~accessTokenIndex && window.location.hash.substr(accessTokenIndex + 13),
-            sq = sq.join();
+            accessToken      = ~accessTokenIndex && window.location.hash.substr(accessTokenIndex + 13);
 
             try {
                 const response = await StockTwit.get( '/symbols.json' , {
@@ -26,25 +25,20 @@ class App extends React.Component {
                     access_token: accessToken,
                     symbols: sq }
             });
-                console.log(response)
-
             } catch (err) {
                 console.log(err);
             };
 
-
+        console.log(response)
         this.setState(state => {
         return  state.symbols.push(sq);
           });
         console.log(this.state.symbols);
     }
-    removeSymbol = (i) =>{
+    removeSymbol = (symbols) =>{
         this.setState(state => {
-          let symbols = state.symbols.filter((item, j) => i !== j);
-          return {
-            symbols,
-          };
-        });
+            return  state.symbols = symbols;
+          });
 
     }
 

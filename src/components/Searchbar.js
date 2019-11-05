@@ -4,14 +4,11 @@ class SearchBar extends React.Component  {
 
     state = {
         sq : ``,
-        symbols: this.props.symbols,
 
     };
 onFormSubmit = (e) =>{
     e.preventDefault();
-    this.state.symbols.push(this.state.sq);
-    this.props.onSubmit(this.state.symbols);
-    this.state.sq = ``;
+    this.props.onSubmit(this.state.sq)
 };
 
     render(){
