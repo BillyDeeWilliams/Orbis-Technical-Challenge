@@ -4,7 +4,7 @@ class SearchBar extends React.Component  {
 
     state = {
         sq : ``,
-        symbols: ``,
+        symbols: this.props.symbols,
 
     };
 onFormSubmit = (e) =>{
