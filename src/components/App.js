@@ -15,6 +15,18 @@ class App extends React.Component {
             messages: [],
     }
 
+    updateSymbols = (symbol) => {
+                state.symbols.push(symbol);
+
+    };
+
+    updateMessages = (apiResponse)=>{
+        this.setState(state => {
+               for (var a = 0; a <= 4; a++){
+                state.messages.push( response.data.messages[a]);
+              }
+         });
+     }
     onSearchSubmit =  async(sq) => {
         var accessTokenIndex = window.location.hash.indexOf('access_token='),
             accessToken      = ~accessTokenIndex && window.location.hash.substr(accessTokenIndex + 13);
@@ -24,22 +36,17 @@ class App extends React.Component {
                 params: {
                     access_token: accessToken,
                     symbols: sq }
-            });
-
-
+                });
+                this.updateMessages(response);
             } catch (err) {
                 console.log(err);
 
             };
             console.log(response);
-            this.setState(state => {
-                  state.symbols.push(sq);
-                  for (var a = 0; a <= 4; a++){
-                    state.messages.push( response.data.messages[a]);
-                  }
-             });
-            console.log(this.state.symbols);
-            console.log(this.state.messages);
+
+            this.updateSymbols(sq);
+            console.log('app state symbol list:' + this.state.symbols);
+            console.log('app stat messgaes:' + this.state.messages);
 
     }
 
