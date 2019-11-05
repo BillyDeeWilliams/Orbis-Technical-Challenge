@@ -24,7 +24,7 @@ class App extends React.Component {
                     symbols: sq }
             });
 
-        console.log(sq)
+        console.log(response)
         this.setState(state => {
         return  state.symbols.push(sq);
           });
