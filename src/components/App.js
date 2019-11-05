@@ -37,12 +37,14 @@ class App extends React.Component {
           });
         console.log(this.state.symbols);
     }
-    removeSymbol = (symbols) =>{
+
+    removeSymbol = (i) => {
+        let symbols = this.state.symbols.filter((item, j) => i !== j);
         this.setState(state => {
             return  state.symbols = symbols;
           });
 
-    }
+      };
 
 
     render(){
