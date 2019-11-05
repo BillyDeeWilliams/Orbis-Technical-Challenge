@@ -16,14 +16,14 @@ class App extends React.Component {
     }
 
     onSearchSubmit =  (sq) => {
-        /*var accessTokenIndex = window.location.hash.indexOf('access_token='),
+        var accessTokenIndex = window.location.hash.indexOf('access_token='),
             accessToken      = ~accessTokenIndex && window.location.hash.substr(accessTokenIndex + 13);
             const response = await StockTwit.get( '/symbols.json' , {
                 params: {
                     access_token: accessToken,
                     symbols: sq }
             });
-*/
+
         console.log(sq)
         this.setState(state => {
         return  state.symbols.push(sq);
@@ -34,7 +34,7 @@ class App extends React.Component {
         this.setState(state => {
             return  state.symbols = symbols;
           });
-        
+
     }
 
 
