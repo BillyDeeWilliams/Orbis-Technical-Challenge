@@ -24,7 +24,8 @@ class App extends React.Component {
         this.setState(state => {
             state.messages = [];
                for (var m = 0; m <= 4; m++){
-                state.messages.push(apiResponse.messages[m]);
+                   //state.messages.push
+                console.log(apiResponse.messages[m]);
               }
          });
      }
@@ -33,14 +34,15 @@ class App extends React.Component {
             accessToken      = ~accessTokenIndex && window.location.hash.substr(accessTokenIndex + 13);
 
             try {
-                const response = await StockTwit.get( '/symbols.json' , {
+                let response = await StockTwit.get( '/symbols.json' , {
                 params: {
                     access_token: accessToken,
                     symbols: sq }
                 });
 
-                this.updateMessages(response.data);
+
                 console.log(response);
+                this.updateMessages(response);
             } catch (err) {
                 console.log(err);
 
