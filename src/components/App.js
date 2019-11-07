@@ -25,7 +25,7 @@ class App extends React.Component {
             state.messages = [];
                for (var m = 0; m <= 4; m++){
                    //state.messages.push
-                console.log(apiResponse.messages[m]);
+                console.log(apiResponse.data.messages[m]);
               }
          });
      }
