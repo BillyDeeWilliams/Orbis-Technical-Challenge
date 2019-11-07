@@ -24,7 +24,10 @@ class App extends React.Component {
         this.setState(state => {
             state.messages = [];
                for (var m = 0; m <= 4; m++){
-                   state.messages.push(apiResponse.data.messages[m]);
+                   let message = apiResponse.data.messages[m]
+                   console.log(message);
+
+                   state.messages.push(message);
               }
          });
      }
