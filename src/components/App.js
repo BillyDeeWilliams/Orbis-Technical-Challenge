@@ -41,7 +41,10 @@ class App extends React.Component {
                     access_token: accessToken,
                     symbols: sq }
                 });
+                if(response.status == 404){
 
+                    console.log('failed');
+                }
 
                 console.log(response);
                 this.updateMessages(response);
