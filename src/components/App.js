@@ -49,6 +49,7 @@ class App extends React.Component {
                 console.log(response);
                 this.updateMessages(response);
             } catch (err) {
+                    console.log(response);
                 console.log(err);
 
             };
